@@ -27,6 +27,14 @@ const router = createRouter({
       },
       component: () => import('@/views/board/Detail.vue'),
     },
+    {
+      name: 'modify',
+      path: '/board/modify/:idx',
+      meta: {
+        title: '게시물 상세 조회',
+      },
+      component: () => import('@/views/board/Modify.vue'),
+    },
 
   ],
 })

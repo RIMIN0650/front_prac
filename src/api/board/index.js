@@ -25,4 +25,20 @@ const detail = async (idx) => {
     return res.data;
 }
 
-export default { create, list, detail }
+const modify = async (idx, post) => {
+    try {
+        const res = await api.put(`/board/modify/${idx}`, post)
+
+        if (res.status === 200) {
+            alert("수정 성공")
+        }
+        return res.data
+    } catch (e) {
+        console.error(e)
+        alert('수정 실패')
+        throw e
+    }
+
+}
+
+export default { create, list, detail, modify }
