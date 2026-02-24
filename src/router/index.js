@@ -5,7 +5,7 @@ const router = createRouter({
   routes: [
     {
       name: 'create',
-      path: '/create',
+      path: '/board/create',
       meta: {
         title: '게시물 작성 페이지',
       },
@@ -13,13 +13,20 @@ const router = createRouter({
     },
     {
       name: 'list',
-      path: '/list',
+      path: '/board/list',
       meta: {
         title: '게시물 전체 조회',
       },
       component: () => import('@/views/board/List.vue'),
     },
-
+    {
+      name: 'detail',
+      path: '/board/detail/:idx',
+      meta: {
+        title: '게시물 상세 조회',
+      },
+      component: () => import('@/views/board/Detail.vue'),
+    },
 
   ],
 })

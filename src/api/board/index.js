@@ -20,4 +20,9 @@ const list = async (req) => {
     return res.data
 }
 
-export default { create, list }
+const detail = async (idx) => {
+    const res = await api.get(`/board/detail/${idx}`)
+    return res.data;
+}
+
+export default { create, list, detail }
