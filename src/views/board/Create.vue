@@ -1,6 +1,6 @@
 <script setup>
 import { reactive } from 'vue'
-import api from '@/plugins/axiosinterceptor'
+import api from '@/api/board'
 
 const post = reactive ({
     title: '',
@@ -8,18 +8,9 @@ const post = reactive ({
 })
 
 const create = async () => {
-    try {
-        const res = await api.post('/board/create', post)
-
-        if (res.status === 200) {
-            alert("등록 성공")
-        }
-    } catch (e) {
-        console.error(e)
-        alert('등록 실패')
-    }
-
+    const res = await api.create(post)
 }
+
 </script>
 
 <template>
