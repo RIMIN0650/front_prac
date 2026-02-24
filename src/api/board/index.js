@@ -41,4 +41,19 @@ const modify = async (idx, post) => {
 
 }
 
-export default { create, list, detail, modify }
+const remove = async (idx) => {
+    try {
+        const res = await api.delete(`/board/delete/${idx}`)
+
+        if (res.status === 200) {
+            alert("삭제 성공")
+        }
+        return res.data
+    } catch (e) {
+        console.error(e)
+        alert('삭제 실패')
+        throw e
+    }
+}
+
+export default { create, list, detail, modify, remove }

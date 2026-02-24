@@ -22,6 +22,13 @@ onMounted(() => {
     detail()
 })
 
+
+const remove = async() => {
+    const idx = route.params.idx
+    await api.remove(idx)
+}
+
+
 </script>
 
 <template>
@@ -29,6 +36,12 @@ onMounted(() => {
     <div>제목 : {{ post.title }}</div>
     <div>내용 : {{ post.contents }}</div>
 
+    <div>
+        <button>수정</button>&nbsp;&nbsp;&nbsp;
+        <button @click="remove()">삭제</button>
+    </div>
+    
+    
 </template>
 
 <style>
