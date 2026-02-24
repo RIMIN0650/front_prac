@@ -11,6 +11,14 @@ const router = createRouter({
       },
       component: () => import('@/views/board/Create.vue'),
     },
+    {
+      name: 'list',
+      path: '/list',
+      meta: {
+        title: '게시물 전체 조회',
+      },
+      component: () => import('@/views/board/List.vue'),
+    },
 
 
   ],
